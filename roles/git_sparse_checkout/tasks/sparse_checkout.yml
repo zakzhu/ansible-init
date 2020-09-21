@@ -15,7 +15,7 @@
   copy:
     content: |
       {{ checkout_dir_pattern }}
-    dest: "{{ git_repo_path}}/.git/info/sparse-checkout"
+    dest: "{{ git_repo_path }}/.git/info/sparse-checkout"
     #owner:
     #group:
     mode: "0644"

@@ -22,7 +22,7 @@
 - name: <r_git_sparse_checkout_t_common> git config remote.origin.url
   git_config:
     name: remote.origin.url
-    repo: "{{ git_repo_path}}"
+    repo: "{{ git_repo_path }}"
     scope: local
   register: remote_origin_url
 
