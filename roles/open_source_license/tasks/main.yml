@@ -1,0 +1,6 @@
+---
+# tasks file for open_source_license
+
+- import_tasks: common.yml
+  tags:
+    - r_open_source_license_t_common

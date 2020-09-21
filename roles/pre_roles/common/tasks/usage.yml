@@ -1,0 +1,6 @@
+---
+- name: <pr_r_common_t_usage> be failed when usage not right
+  fail:
+    msg: |
+      Usage: ansible-playbook -e project=<project-name> -e 'author="<full name>"' ansible-init/site.yml
+  when: project is not defined or author is not defined

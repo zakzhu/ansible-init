@@ -1,0 +1,13 @@
+---
+# defaults file for open_source_license
+
+# FROM TASK: <r_open_source_license_t_common> template a file to {{ project_path }}/LICENSE
+project_path: "{{ playbook_dir | dirname }}/{{ project }}"
+
+# choose a valid license ID from https://spdx.org - some suggested licenses:
+# - BSD-3-Clause (default)
+# - MIT
+license: BSD-3-Clause
+
+date_cmd: "date +'%Y'"
+year: "{{ lookup('pipe', '{{ date_cmd }}') }}"

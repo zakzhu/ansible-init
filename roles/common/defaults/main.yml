@@ -1,0 +1,14 @@
+---
+# defaults file for common
+
+# FROM TASK: "<r_common_t_common> copy {{ playbook_content }} to {{ project_path }}/"
+project_path: "{{ playbook_dir | dirname }}/{{ project }}"
+
+# FROM TASK: <r_common_t_rm_gitkeep> remove unwanted .gitkeep files
+unwanted_gitkeep_parent_dirs:
+  - docs
+  - roles/common/files
+  - roles/common/templates
+  - tests
+  - tmp
+  - utils

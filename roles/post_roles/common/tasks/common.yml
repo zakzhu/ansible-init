@@ -1,0 +1,6 @@
+---
+- name: <po_r_common_t_common> set end stats
+  set_stats:
+    data: "{{ end_stats }}" # required. A dictionary of which each key represents a stat (or variable) you want to keep track of
+    aggregate: true # not required. boolean that indicates if the provided value is aggregated to the existing stat C(yes) or will replace it C(no)
+    per_host: true # not required. boolean that indicates if the stats is per host or for all hosts in the run.

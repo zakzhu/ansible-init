@@ -1,0 +1,10 @@
+---
+# tasks file for git_sparse_checkout
+
+- import_tasks: common.yml
+  tags:
+    - r_git_sparse_checkout_t_common
+
+- import_tasks: sparse_checkout.yml
+  tags:
+    - r_git_sparse_checkout_t_sparse_checkout

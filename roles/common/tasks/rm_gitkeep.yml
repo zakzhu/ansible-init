@@ -1,0 +1,10 @@
+---
+- name: <r_common_t_rm_gitkeep> remove unwanted .gitkeep files
+  file:
+    path: "{{ i }}"
+    state: absent
+  vars:
+    i: "{{ project_path }}/{{ item }}/.gitkeep"
+  loop: "{{ unwanted_gitkeep_parent_dirs }}"
+  loop_control:
+    label: "{{ i }}"

@@ -1,0 +1,12 @@
+*.pyc
+*.sw?
+*.retry
+*.pytest_cache
+*.cache
+*/__pycache__
+.DS_Store
+.vagrant
+.mypy_cache/
+.vscode/*
+TODO.md
+tmp/

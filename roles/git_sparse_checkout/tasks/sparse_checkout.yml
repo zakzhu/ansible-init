@@ -1,0 +1,36 @@
+---
+- name: <r_git_sparse_checkout_t_sparse_checkout> enable the core.sparseCheckout config setting
+  command:
+    cmd: git config core.sparseCheckout true
+    chdir: "{{ git_repo_path }}"
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *won't* be run.
+    #creates:
+
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *will* be run.
+    #remove:
+
+- name: <r_git_sparse_checkout_t_sparse_checkout> specify what files are included in .git/info/sparse-checkout
+  copy:
+    content: |
+      {{ checkout_dir_pattern }}
+    dest: "{{ git_repo_path}}/.git/info/sparse-checkout"
+    #owner:
+    #group:
+    mode: "0644"
+    # The validation command to run before copying into place.
+    # E.g. `validate: /usr/sbin/visudo -csf %s`
+    #validate:
+
+- name: <r_git_sparse_checkout_t_sparse_checkout> git pull origin master
+  command:
+    cmd: git pull origin master
+    chdir: "{{ git_repo_path }}"
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *won't* be run.
+    #creates:
+
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *will* be run.
+    #remove:

@@ -1,0 +1,14 @@
+---
+# tasks file for common
+
+- import_tasks: common.yml
+  tags:
+    - r_common_t_common
+
+- import_tasks: rm_gitkeep.yml
+  tags:
+    - r_common_t_rm_gitkeep
+
+- import_tasks: add_gitignore.yml
+  tags:
+    - r_common_t_add_gitignore

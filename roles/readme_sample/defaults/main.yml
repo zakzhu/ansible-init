@@ -1,0 +1,42 @@
+---
+# defaults file for readme_sample
+
+# FROM TASK: "<r_readme_sample_t_common> template a file to {{ project_path }}/README.md.sample"
+#project:
+#project_path:
+
+# choose a valid license ID from https://spdx.org - some suggested licenses:
+# - BSD-3-Clause (default)
+# - MIT
+# - GPL-2.0-or-later
+# - GPL-3.0-only
+# - Apache-2.0
+# - CC-BY-4.0
+license: BSD-3-Clause
+
+date_cmd: "date +'%Y'"
+year: "{{ lookup('pipe', '{{ date_cmd }}') }}"
+
+#author:
+#github_account:
+
+# for travis
+info_build_url: https://travis-ci.org/github/{{ github_account | default('GITHUB-ACCOUNT') }}/{{ project }}
+# for jenkins
+#info_build_url:
+
+info_contribute_url: CONTRIBUTING.md
+info_gitter_url: https://gitter.im/{{ github_account | default('GITHUB-ACCOUNT') }}/{{ project }}
+info_license_url: LICENSE
+info_release_url: https://github.com/{{ github_account | default('GITHUB-ACCOUNT') }}/{{ project }}/releases
+info_prs_url: https://github.com/{{ github_account | default('GITHUB-ACCOUNT') }}/{{ project }}/pulls
+
+# for travis
+shield_build_url: https://img.shields.io/travis/{{ github_account | default('GITHUB-ACCOUNT') }}/{{ project }}
+# for jenkins, see https://shields.io/category/build for help
+#shield-build_url:
+
+shield_gitter_url: https://img.shields.io/gitter/room/{{ github_account | default('GITHUB-ACCOUNT') }}/{{ project }}
+shield_license_url: https://img.shields.io/github/license/{{ github_account | default('GITHUB-ACCOUNT') }}/{{ project }}
+shield_release_url: https://img.shields.io/github/v/release/{{ github_account | default('GITHUB-ACCOUNT') }}/{{ project }}
+shield_prs_url: https://img.shields.io/badge/PRs-welcome-brightgreen

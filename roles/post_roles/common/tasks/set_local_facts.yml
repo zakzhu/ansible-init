@@ -1,0 +1,22 @@
+---
+- name: <po_r_common_t_set_local_facts> create /etc/ansible/facts.d/ dir
+  file:
+    path: /etc/ansible/facts.d/
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: <po_r_common_t_set_local_facts> copy custom stats to local facts
+  copy:
+    content: |
+      {{ stats | from_yaml | to_nice_json }}
+    dest: "/etc/ansible/facts.d/{{ stats_file_basename }}.fact"
+    owner: root
+    group: root
+    mode: "0644"
+    # The validation command to run before copying into place.
+    # E.g. `validate: /usr/sbin/visudo -csf %s`
+    #validate:
+  vars:
+    stats: "{{ start_stats.data | combine(end_stats.data, recursive=true) | to_yaml }}"

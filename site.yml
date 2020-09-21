@@ -1,0 +1,56 @@
+# @Author: Zak Zhu
+# @Date:   2020-07-27 14:52:43
+# @Last Modified by:   Zak Zhu
+# @Last Modified time: 2020-09-22 02:08:15
+
+---
+- name: "{{ playbook_dir | basename }}"
+  hosts: localhost
+  remote_user:
+  gather_facts: yes
+  vars:
+  force_handlers: no
+  pre_tasks:
+    - when:
+      block:
+        - import_role:
+            name: pre_roles/common
+          tags:
+            - pr_r_common
+        - meta: flush_handlers
+
+  tasks:
+    - when:
+      block:
+        - import_role:
+            name: git_sparse_checkout
+          tags:
+            - r_git_sparse_checkout
+        - meta: flush_handlers
+
+        - import_role:
+            name: common
+          tags:
+            - r_common
+        - meta: flush_handlers
+
+        - import_role:
+            name: readme_sample
+          tags:
+            - r_readme_sample
+        - meta: flush_handlers
+
+        - import_role:
+            name: open_source_license
+          tags:
+            - r_open_source_license
+        - meta: flush_handlers
+
+  post_tasks:
+    - when:
+      block:
+        - import_role:
+            name: post_roles/common
+          tags:
+            - po_r_common
+        - meta: flush_handlers

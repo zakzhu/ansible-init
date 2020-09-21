@@ -1,0 +1,10 @@
+---
+- name: "<r_readme_sample_t_common> template a file to {{ project_path }}/README.md.sample"
+  template:
+    src: README.md.sample.j2
+    dest: "{{ project_path }}/README.md.sample"
+    #owner:
+    #group:
+    #mode: "0644"
+    #validate:
+    #backup: yes

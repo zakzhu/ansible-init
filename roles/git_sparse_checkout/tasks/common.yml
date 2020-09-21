@@ -1,0 +1,40 @@
+---
+- name: <r_git_sparse_checkout_t_common> create repository directory
+  file:
+    path: "{{ git_repo_path }}"
+    state: directory
+    #owner:
+    #group:
+    mode: "0755"
+
+- name: <r_git_sparse_checkout_t_common> git init
+  command:
+    cmd: git init
+    chdir: "{{ git_repo_path }}"
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *won't* be run.
+    #creates:
+
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *will* be run.
+    #remove:
+
+- name: <r_git_sparse_checkout_t_common> git config remote.origin.url
+  git_config:
+    name: remote.origin.url
+    repo: "{{ git_repo_path}}"
+    scope: local
+  register: remote_origin_url
+
+- name: <r_git_sparse_checkout_t_common> git remote add origin url
+  command:
+    cmd: "git remote add origin {{ git_url }}"
+    chdir: "{{ git_repo_path }}"
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *won't* be run.
+    #creates:
+
+    # A filename or (since 2.0) glob pattern.
+    # If it already exists, this step *will* be run.
+    #remove:
+  when: remote_origin_url.config_value == ""

@@ -1,0 +1,23 @@
+---
+- name: "<r_common_t_common> copy {{ playbook_content }} to {{ project_path }}/"
+  copy:
+    # if path ends with "/", only inside contents of that
+    # directory are copied to destination.
+    # if it does not end with "/", the directory itself
+    # with all contents is copied.
+    src: "{{ playbook_content }}"
+    dest: "{{ project_path }}/"
+    #owner:
+    #group:
+    #mode:
+    #backup: yes
+    # The validation command to run before copying into place.
+    # E.g. `validate: /usr/sbin/visudo -csf %s`
+    #validate:
+  vars:
+    playbook_content: "{{ git_repo_path }}/{{ checkout_dir }}/"
+
+- name: "<r_common_t_common> remove {{ git_repo_path }} directory"
+  file:
+    path: "{{ git_repo_path }}"
+    state: absent

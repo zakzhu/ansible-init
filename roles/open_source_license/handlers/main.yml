@@ -1,0 +1,5 @@
+---
+# handlers file for open_source_license
+
+# Below is a code example
+- import_tasks: from_common.yml

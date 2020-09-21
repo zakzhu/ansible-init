@@ -1,0 +1,6 @@
+---
+# tasks file for readme_sample
+
+- import_tasks: common.yml
+  tags:
+    - r_readme_sample_t_common
