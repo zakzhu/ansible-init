@@ -16,8 +16,3 @@
     #validate:
   vars:
     playbook_content: "{{ git_repo_path }}/{{ checkout_dir }}/"
-
-- name: "<r_common_t_common> remove {{ git_repo_path }} directory"
-  file:
-    path: "{{ git_repo_path }}"
-    state: absent
