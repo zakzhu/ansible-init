@@ -1,0 +1,13 @@
+skip_list:
+  - '701'
+  - '702'
+  - '703'
+  - '704'
+
+exclude_paths:
+  - roles/common/meta
+  - roles/git_sparse_checkout
+  - roles/open_source_license/meta
+  - roles/post_roles/common/meta
+  - roles/pre_roles/common/meta
+  - roles/readme_sample/meta
