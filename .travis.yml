@@ -1,4 +1,6 @@
 ---
+dist: Focal
+
 language: python
 python:
   - "3.6"
@@ -36,7 +38,7 @@ script:
     done
 
   - |
-    ansible-playbook -e project=test -e author=test --check site.yml
+    ansible-playbook -e project=test -e author=test --check -v site.yml
     if [ $? -ne 0 ]; then
         exit 1
     fi
