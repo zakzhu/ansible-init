@@ -10,6 +10,9 @@
     # A filename or (since 2.0) glob pattern.
     # If it already exists, this step *will* be run.
     #remove:
+  vars:
+    sparse_checkout: core.sparseCheckout
+  when: git_config_result.config_values[sparse_checkout] is not defined
 
 - name: <r_git_sparse_checkout_t_sparse_checkout> specify what files are included in .git/info/sparse-checkout
   copy:

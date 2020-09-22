@@ -13,18 +13,17 @@
     chdir: "{{ git_repo_path }}"
     # A filename or (since 2.0) glob pattern.
     # If it already exists, this step *won't* be run.
-    #creates:
-
+    creates: .git
     # A filename or (since 2.0) glob pattern.
     # If it already exists, this step *will* be run.
     #remove:
 
-- name: <r_git_sparse_checkout_t_common> git config remote.origin.url
+- name: <r_git_sparse_checkout_t_common> git config list all
   git_config:
-    name: remote.origin.url
+    list_all: yes
     repo: "{{ git_repo_path }}"
     scope: local
-  register: remote_origin_url
+  register: git_config_result
 
 - name: <r_git_sparse_checkout_t_common> git remote add origin url
   command:
@@ -37,4 +36,6 @@
     # A filename or (since 2.0) glob pattern.
     # If it already exists, this step *will* be run.
     #remove:
-  when: not remote_origin_url.config_value
+  vars:
+    url: remote.origin.url
+  when: git_config_result.config_values[url] is not defined
