@@ -7,15 +7,10 @@ python:
   - "3.7"
   - "3.8"
 
-addons:
-  apt:
-    packages:
-      - git
-      - python-pip
-
 install:
-  - pip install -r tests/requirements.txt
-  - pip install ansible-lint==4.2.0
+  - apt install ansible
+  - apt install ansible-lint
+
 script:
   - |
     if [[ -n $(grep --exclude-dir=.git -P "\xa0" -r .) ]]; then
