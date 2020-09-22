@@ -7,9 +7,12 @@ python:
   - "3.7"
   - "3.8"
 
-install:
-  - apt install ansible
-  - apt install ansible-lint
+addons:
+  apt:
+    packages:
+      - ansible
+      - ansible-lint
+      - git
 
 script:
   - |
