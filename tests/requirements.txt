@@ -2,3 +2,4 @@
 ansible>=2.9,<2.10,!=2.9.10
 Jinja2>=2.10
 jmespath
+six==1.10.0
