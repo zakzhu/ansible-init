@@ -8,5 +8,4 @@
 .vagrant
 .mypy_cache/
 .vscode/*
-TODO.md
 tmp/
