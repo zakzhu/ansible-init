@@ -15,7 +15,7 @@ addons:
 
 install:
   - pip install -r tests/requirements.txt
-  - pip install ansible-lint
+  - pip install ansible-lint==4.2.0
 
 script:
   - |
