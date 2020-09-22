@@ -1,45 +1,21 @@
 ---
-dist: Focal
-
 language: python
-python:
-  - "3.6"
-  - "3.7"
-  - "3.8"
+services: docker
 
-addons:
-  apt:
-    packages:
-      - git
-      - python-pip
+env:
+  matrix:
+    # Test defaults.
+    - MOLECULE_DISTRO: centos7
+    - MOLECULE_DISTRO: centos8
+
+before_install:
+  # Upgrade Docker to work with docker-py.
+  - curl https://gist.githubusercontent.com/geerlingguy/ce883ad4aec6a5f1187ef93bd338511e/raw/36612d28981d92863f839c5aefe5b7dd7193d6c6/travis-ci-docker-upgrade.sh | sudo bash
 
 install:
-  - pip install -r tests/requirements.txt
-  - pip install ansible-lint==4.2.0
+  # Install test dependencies.
+  - pip install molecule yamllint ansible-lint docker
 
 script:
-  - |
-    if [[ -n $(grep --exclude-dir=.git -P "\xa0" -r .) ]]; then
-      echo 'NBSP characters found'
-      exit 1
-    fi
-
-  - |
-    for i in $(ls -1 roles/); do
-      ANSIBLE_LOG_PATH=/dev/null
-      ansible-lint -x 701,702,703,704 \
-        --exclude=roles/git_sparse_checkout \
-        --exclude=roles/pre_roles/common/meta \
-        --exclude=roles/post_roles/common/meta \
-        --exclude=roles/${i}/meta \
-        -v roles/${i}
-      if [ $? -ne 0 ]; then
-        exit 1
-      fi
-    done
-
-  - |
-    ansible-playbook -e project=test -e author=test --check -vvv site.yml
-    if [ $? -ne 0 ]; then
-        exit 1
-    fi
+  # Run tests.
+  - molecule test
