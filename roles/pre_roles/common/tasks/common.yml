@@ -7,7 +7,6 @@
       - CentOS
       - Fedora
       - RedHat
-      - Ubuntu
   when: ansible_facts['distribution'] not in supported_os_distro
 
 - name: <pr_r_common_t_common> set start stats
