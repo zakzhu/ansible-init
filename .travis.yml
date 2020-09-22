@@ -17,7 +17,7 @@ install:
   - pip install -r tests/requirements.txt
   - pip install ansible-lint
 
-  script:
+script:
   - |
     if [[ -n $(grep --exclude-dir=.git -P "\xa0" -r .) ]]; then
       echo 'NBSP characters found'
