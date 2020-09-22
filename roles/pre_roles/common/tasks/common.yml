@@ -1,8 +1,12 @@
 ---
-- name: <pr_r_common_t_common> be failed when os not compatible
+- name: <pr_r_common_t_common> be failed when the os not supported
   fail:
-    msg: "The operating system publisher must be 'RedHat'"
-  when: ansible_facts['os_family'] != 'RedHat'
+    msg: "The operating system is not supported!"
+  vars:
+    supported_os:
+      - RedHat
+      - Ubuntu
+  when: ansible_facts['os_family'] not in supported_os
 
 - name: <pr_r_common_t_common> set start stats
   set_stats:
