@@ -1,6 +1,7 @@
 # Ansible-Init
 
-[![build status][shield-build]][info-build]
+<!-- [![build status][shield-build]][info-build] -->
+
 [![gitter room][shield-gitter]][info-gitter]
 [![license][shield-license]][info-license]
 [![release][shield-release]][info-release]
@@ -18,8 +19,7 @@
   - Fedora
   - MacOS
   - Ubuntu
-- **Dependencies:**
-  -
+- ## **Dependencies:**
 
 ## Installation
 
