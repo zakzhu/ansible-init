@@ -37,4 +37,4 @@
     # A filename or (since 2.0) glob pattern.
     # If it already exists, this step *will* be run.
     #remove:
-  when: remote_origin_url.config_value == ""
+  when: not remote_origin_url.config_value
