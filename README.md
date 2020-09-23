@@ -152,9 +152,56 @@ The top level of a new ansible project's directory would contain files and direc
 └── utils
 ```
 
+### Master Playbook
+
+The file named site.yml is master playbook of a new project as follows:
+
+```yaml
+---
+- name: "{{ playbook_dir | basename }}"
+  hosts: localhost
+  remote_user:
+  gather_facts: yes
+  vars:
+    status: "{{ ansible_local[stats_file_name]['status'] | default('0') }}"
+  force_handlers: no
+  pre_tasks:
+    - name: only collect the default minimum amount of facts
+      setup:
+        gather_subset:
+          - "!all"
+
+    - when: status == '0'
+      block:
+        - import_role:
+            name: pre_roles/common
+          tags:
+            - pr_r_common
+        - meta: flush_handlers
+
+  tasks:
+    - when: status == '0'
+      block:
+        - import_role:
+            name: common
+          tags:
+            - r_common
+        - meta: flush_handlers
+
+  post_tasks:
+    - when: status == '0'
+      block:
+        - import_role:
+            name: post_roles/common
+          tags:
+            - po_r_common
+        - meta: flush_handlers
+
+```
+
 ### Some Conventions
 
-For best practice, I specify some conventions in the project of ansible playbook. And I recommend you follow these conventions.
+For best practice, I specify some conventions in a new project of ansible playbook. And I recommend you follow these conventions.
 
 #### Play name
 
