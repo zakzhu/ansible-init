@@ -198,7 +198,7 @@ For best practice, I specify some conventions in the project of ansible playbook
 - handlers file name
 
   ```
-  from_<tasks file name>.yml		# e.g. from_common.yml
+  from_<tasks file name>.yml    # e.g. from_common.yml
   ```
 
 - decouple handlers file
@@ -282,9 +282,9 @@ For best practice, I specify some conventions in the project of ansible playbook
   >
   > There is a convention what I specify. 
   >
-  > The task name should start with the tag name enclosed in angle brackets (e.g. "-name: <r_common_t_common> test task").
+  > The task name should start with a tag name enclosed in angle brackets (e.g. `-name: <r_common_t_common> test task`).
   >
-  > And the tag name in the task name should follow the tag that you apply in the main.yml . 
+  > And the tag name in the task name should follow the tag that you apply in the tasks/main.yml file. 
 
   ```yaml
   - name: <tag name> TASK NAME
@@ -320,14 +320,14 @@ playbook: site.yml
   > One role applies one tag at least.
 
   ```
-  pr_r_common		# complete spelling: "pre_roles roles common"
-  				# tag meaning: roles/pre_roles/common role
+  pr_r_common     # complete spelling: "pre_roles roles common"
+                  # tag meaning: roles/pre_roles/common role
   
-  r_common		# complete spelling: "roles common"
-  				# tag meaning: roles/common role
+  r_common        # complete spelling: "roles common"
+                  # tag meaning: roles/common role
   				
-  po_r_common		# complete spelling: "post_roles roles common"
-  				# tag meaning: roles/post_roles/common role
+  po_r_common     # complete spelling: "post_roles roles common"
+                  # tag meaning: roles/post_roles/common role
   ```
 
 - tasks tag
@@ -339,17 +339,17 @@ playbook: site.yml
   > One tasks file applies one tag at least.
 
   ```
-  pr_r_common_t_common 			# complete spelling: "pre_roles roles common tasks common"
-  								# tag meaning: roles/pre_roles/common/tasks/common.yml tasks file
+  pr_r_common_t_common            # complete spelling: "pre_roles roles common tasks common"
+                                  # tag meaning: roles/pre_roles/common/tasks/common.yml tasks file
   						
-  r_common_t_common 				# complete spelling: "roles common tasks common"
-  								# tag meaning: roles/common/tasks/common.yml tasks file	
+  r_common_t_common               # complete spelling: "roles common tasks common"
+                                  # tag meaning: roles/common/tasks/common.yml tasks file	
                           
-  po_r_common_t_common 			# complete spelling: "post_roles roles common tasks common"
-  								# tag meaning: roles/post_roles/common/tasks/common.yml tasks file
+  po_r_common_t_common            # complete spelling: "post_roles roles common tasks common"
+                                  # tag meaning: roles/post_roles/common/tasks/common.yml tasks file
   
-  po_r_common_t_set_local_facts	# complete spelling: "post_roles roles common tasks set_local_facts"
-  								# tag meaning: roles/post_roles/common/tasks/set_local_facts.yml tasks file
+  po_r_common_t_set_local_facts   # complete spelling: "post_roles roles common tasks set_local_facts"
+                                  # tag meaning: roles/post_roles/common/tasks/set_local_facts.yml tasks file
   ```
 
 ## Contributing
