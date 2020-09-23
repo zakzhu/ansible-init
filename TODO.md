@@ -2,3 +2,5 @@
   - .travis.yml
   - molecule/
   - README.md (BUILD badge)
+- \* CONTRIBUTION GUIDE
+  - CONTRIBUTING.md
