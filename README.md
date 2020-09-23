@@ -17,15 +17,45 @@
   - CentOS-7
   - CentOS-8
   - Fedora
-  - MacOS
-  - Ubuntu
-- ## **Dependencies:**
+- **Dependencies:**
+  - ansible
+  - git
 
 ## Installation
 
+- Install dependencies:
+
+  ```bash
+  yum -y install ansible
+  ```
+
+  ```bash
+  yum -y install git
+  ```
+
+- Install ansible-init:
+
+  ```bash
+  git clone https://github.com/zakzhu/ansible-init.git
+  ```
+
 ## Usage
 
+```bash
+cd ansible-init
+
+ansible-playbook -e project=<project-name> -e 'author="<full name>"' site.yml
+```
+
 ## Examples
+
+Use ansible-init to create a new ansible project which named "test-project":
+
+```bash
+cd ansible-init
+
+ansible-playbook -e project=test-project -e 'author="zak zhu"' site.yml
+```
 
 ## Why?
 
@@ -35,22 +65,11 @@
 
 See the [contribution guide][info-contribute].
 
-## Support and Migration
-
-> A section on the support status of your project is very helpful, especially once you’ve released a few different major versions. This section is mostly useful to existing users who may need some hand-holding through a migration between major versions of your project.
->
-> A full migration guide might be a bit long to add to your README, I use a `MIGRATION` file in the root of my project repositories and link to it from this section ([see pa11y for an example](https://github.com/springernature/pa11y/blob/master/MIGRATION.md)).
-
-## Common Questions
-
-> A place for frequently asked questions, to reduce duplicate issues being opened.
-
 ## Thanks
 
 The following excellent people helped massively:
 
 - [Rowan Manning](https://rowanmanning.com)
--
 
 ## License
 
