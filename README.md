@@ -63,12 +63,12 @@ After have learned ansible documentation about best practices, I want to find a 
 
 To achieve best practice, the design concept  of ansible-init mostly follows two thought below:  
 
-- **Decouple and share**
-- **Convention over configuration**
+- **Decouple and Share**
+- **Convention over Configuration**
 
 ### Directory Layout
 
-The top level of the ansible project's directory would contain files and directories like so:
+The top level of a new ansible project's directory would contain files and directories like so:
 
 ```
 ├── ansible.cfg
@@ -154,7 +154,7 @@ The top level of the ansible project's directory would contain files and directo
 
 ### Some Conventions
 
-For best practice, I specify some conventions in an ansible project. And I recommend you follow these conventions.
+For best practice, I specify some conventions in the project of ansible playbook. And I recommend you follow these conventions.
 
 #### Play name
 
@@ -282,7 +282,7 @@ For best practice, I specify some conventions in an ansible project. And I recom
   >
   > There is a convention what I specify. 
   >
-  > Task name should start from a tag name which placed inside angle brackets (e.g. `- name: <r_common_t_common> test task`). 
+  > The task name should start with the tag name enclosed in angle brackets (e.g. "-name: <r_common_t_common> test task").
   >
   > And the tag name in the task name should follow the tag that you apply in the main.yml . 
 
