@@ -7,7 +7,7 @@
 [![release][shield-release]][info-release]
 [![prs welcome][shield-prs]][info-prs]
 
-> Project description
+Ansible-Init is designed to initilize a new project of ansible playbook with best practice.  
 
 [TOC]
 
@@ -49,12 +49,12 @@ ansible-playbook -e project=<project-name> -e 'author="<full name>"' site.yml
 
 ## Examples
 
-Use ansible-init to create a new ansible project which named "test-project":
+To generate a new project of ansible playbook with ansible-init, simply run:
 
 ```bash
 cd ansible-init
 
-ansible-playbook -e project=test-project -e 'author="zak zhu"' site.yml
+ansible-playbook -e project=my-new-project -e 'author="zak zhu"' site.yml
 ```
 
 ## Why?
