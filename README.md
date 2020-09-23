@@ -7,7 +7,7 @@
 [![release][shield-release]][info-release]
 [![prs welcome][shield-prs]][info-prs]
 
-Ansible-Init is designed to initilize a new project of ansible playbook with best practice.  
+Ansible-Init is designed to initilize a new project of ansible playbook for best practice.  
 
 [TOC]
 
@@ -59,7 +59,7 @@ ansible-playbook -e project=my-new-project -e 'author="zak zhu"' site.yml
 
 ## Why?
 
-> If your project does something already catered for by another project or is particularly complex, it’s useful to provide some justification.
+
 
 ## Contributing
 
