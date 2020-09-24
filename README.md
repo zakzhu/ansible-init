@@ -18,8 +18,8 @@ Ansible-Init is designed to initialize a new project of ansible playbook for bes
   - CentOS-8
   - Fedora
 - **Dependencies:**
-  - ansible
-  - git
+  - ansible\>=2.9, <2.10, !=2.9.10
+  - git>=1.8.3.1
 
 ## Installation
 
