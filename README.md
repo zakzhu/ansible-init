@@ -152,9 +152,9 @@ The top level of a new ansible project's directory would contain files and direc
 └── utils
 ```
 
-### Master Playbook
+### Main Playbook
 
-The file named site.yml is master playbook of a new project as follows:
+The file named site.yml is main playbook of a new project as follows:
 
 ```yaml
 ---
