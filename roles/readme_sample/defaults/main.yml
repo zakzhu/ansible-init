@@ -26,6 +26,7 @@ info_build_url: https://travis-ci.org/github/{{ github_account | default('GITHUB
 #info_build_url:
 
 info_contribute_url: CONTRIBUTING.md
+info_faq_url: FAQ.md
 info_gitter_url: https://gitter.im/{{ github_account | default('GITHUB-ACCOUNT') }}/{{ project }}
 info_license_url: LICENSE
 info_release_url: https://github.com/{{ github_account | default('GITHUB-ACCOUNT') }}/{{ project }}/releases

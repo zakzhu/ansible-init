@@ -403,6 +403,10 @@ playbook: site.yml
 
 See the [contribution guide][info-contribute].
 
+## Frequently asked questions
+
+Please see [FAQ.md][info-faq] for frequently asked questions.
+
 ## Thanks
 
 The following excellent people helped massively:
@@ -416,6 +420,7 @@ Copyright &copy; 2020, Zak Zhu
 
 [info-build]: https://travis-ci.org/github/zakzhu/ansible-init
 [info-contribute]: CONTRIBUTING.md
+[info-faq]: FAQ.md
 [info-gitter]: https://gitter.im/zakzhu/ansible-init
 [info-license]: LICENSE
 [info-release]: https://github.com/zakzhu/ansible-init/releases
