@@ -1,5 +1,5 @@
 ---
-- name: <po_r_common_t_set_local_facts> create /etc/ansible/facts.d/ dir
+- name: <po_r_common_t_set_local_facts> create directory /etc/ansible/facts.d/
   file:
     path: /etc/ansible/facts.d/
     state: directory
