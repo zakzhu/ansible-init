@@ -1,7 +1,7 @@
 ---
 - name: "<r_open_source_license_t_common> template a file to {{ project_path }}/LICENSE"
   template:
-    src: "{{ license | lower }}.j2"
+    src: "{{ license.lower() }}.j2"
     dest: "{{ project_path }}/LICENSE"
     #owner:
     #group:
