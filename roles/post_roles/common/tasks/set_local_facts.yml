@@ -19,4 +19,4 @@
     # E.g. `validate: /usr/sbin/visudo -csf %s`
     #validate:
   vars:
-    stats: "{{ start_stats.data | combine(end_stats.data, recursive=true) | to_yaml }}"
+    stats: "{{ start_stats['data'] | combine(end_stats['data'], recursive=true) | to_yaml }}"
