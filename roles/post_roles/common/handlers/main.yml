@@ -1,7 +1,2 @@
 ---
 # handlers file for post_roles/common
-
-# Below is a code example
-- import_tasks: from_common.yml
-
-- import_tasks: from_set_local_facts.yml
