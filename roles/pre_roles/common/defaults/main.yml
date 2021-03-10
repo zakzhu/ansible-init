@@ -1,7 +1,6 @@
 ---
 # defaults file for pre_roles/common
 
-# FROM TASK: <pr_r_common_t_common> set start stats
 date_cmd: "date +'%Y-%m-%d %H:%M:%S'"
 start_stats:
   data:

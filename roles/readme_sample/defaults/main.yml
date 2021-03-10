@@ -1,7 +1,6 @@
 ---
 # defaults file for readme_sample
 
-# FROM TASK: "<r_readme_sample_t_common> template a file to {{ project_path }}/README.md.sample"
 #project:
 #project_path:
 

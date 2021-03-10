@@ -1,12 +1,9 @@
 ---
 # defaults file for git_sparse_checkout
 
-# FROM TASK: <r_git_sparse_checkout_t_common> create repository directory
 git_repo_path: /tmp/playbook-content
 
-# FROM TASK: <r_git_sparse_checkout_t_common> git remote add origin url
 git_url: https://github.com/zakzhu/ansible-demos.git
 
-# FROM TASK: <r_git_sparse_checkout_t_sparse_checkout> Specify what files are included
 checkout_dir: playbook-content
 checkout_dir_pattern: "/{{ checkout_dir }}/"

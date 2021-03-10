@@ -1,7 +1,6 @@
 ---
 # defaults file for post_roles/common
 
-# FROM TASK: <po_r_common_t_common> set end stats
 play_name: "{{ ansible_play_name | regex_replace('-', '_') }}"
 ip_add_re_ss: "{{ ansible_facts['default_ipv4']['address'] | regex_replace('\\.', '_') }}"
 stats_file_name: "{{ play_name }}-{{ ip_add_re_ss }}"
